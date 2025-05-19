@@ -1,14 +1,15 @@
-import http from 'http';
+// // ESM style __dirname
 
-const hostname = '127.0.0.1';
-const port = 3002;
+import { getBasePaths } from './utils/base-path';
 
-const server = http.createServer((req: any, res: any) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
-});
+const { __dirname, __filename } = getBasePaths(import.meta.url);
+// const worker = new Worker(__dirname + '/worker.ts');
+// console.log('Start');
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+// worker.on('message', (msg) => {
+//   console.log('✅ Worker javobi:', msg);
+// });
+
+// console.log('End');
+
+console.log(__filename, __dirname);
