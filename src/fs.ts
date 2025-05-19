@@ -1,4 +1,5 @@
-const fs = require('fs');
+import fs from 'fs';
+
 // INPUT: Fayldan ma’lumot o‘qish (asinxron I/O)
 fs.readFile('roles.json', 'utf8', (err, data) => {
   if (err) throw err;
