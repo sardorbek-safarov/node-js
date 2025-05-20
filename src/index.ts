@@ -1,6 +1,6 @@
 // // ESM style __dirname
 
-import { getBasePaths } from './utils/base-path';
+import { getBasePaths } from './utils/base-path.ts';
 
 const { __dirname, __filename } = getBasePaths(import.meta.url);
 // const worker = new Worker(__dirname + '/worker.ts');
@@ -11,5 +11,3 @@ const { __dirname, __filename } = getBasePaths(import.meta.url);
 // });
 
 // console.log('End');
-
-console.log(__filename, __dirname);

@@ -1,15 +1,10 @@
 import fs from 'fs';
 
 // INPUT: Fayldan ma’lumot o‘qish (asinxron I/O)
-fs.readFile('roles.json', 'utf8', (err, data) => {
-  if (err) throw err;
+const readFile = fs.readFile('public/KIA.mp4', 'binary', (err, data) => {
+  if (err) {
+    console.log(err);
+  }
 
-  console.log('Fayldan o‘qildi:', data); // OUTPUT: terminalga chiqarish
-  console.log('Fayldan o‘qildi:', JSON.parse(data).User); // OUTPUT: terminalga chiqarish
-
-  // OUTPUT: Boshqa faylga yozish
-  fs.writeFile('roles-copy.json', data, (err) => {
-    if (err) throw err;
-    console.log('Yozildi: roles-copy.json');
-  });
+  console.log(data);
 });
