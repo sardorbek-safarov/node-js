@@ -4,7 +4,6 @@ import { promisify } from 'util';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const statAsync = promisify(stat);
 const server = http.createServer(async (req, res) => {});
 const port = process.env.PORT || 3030;
 
