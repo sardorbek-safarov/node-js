@@ -4,7 +4,14 @@ import { promisify } from 'util';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const server = http.createServer(async (req, res) => {});
+const server = http.createServer(async (req, res) => {
+  res.setHeader('Set-Cookie', [
+    `accessToken=ahsjdhfhuwqehfuiaqq879934r19234rf78qowyfefqui; HttpOnly; Path=/; Max-Age=${60 * 60}; Secure`,
+    `refreshToken=8934y0r098wehrffw8erhfowf783hfoqhwerof; HttpOnly; Path=/; Max-Age=${60 * 60 * 24 * 7 * 2}; Secure`,
+  ]);
+
+  res.end('Hello World!');
+});
 const port = process.env.PORT || 3030;
 
 server.listen(port, () => {
